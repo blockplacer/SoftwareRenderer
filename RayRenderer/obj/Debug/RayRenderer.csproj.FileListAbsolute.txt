@@ -1,0 +1,10 @@
+C:\Users\casper\source\repos\RayRenderer\RayRenderer\bin\Debug\RayRenderer.exe.config
+C:\Users\casper\source\repos\RayRenderer\RayRenderer\bin\Debug\RayRenderer.exe
+C:\Users\casper\source\repos\RayRenderer\RayRenderer\bin\Debug\RayRenderer.pdb
+C:\Users\casper\source\repos\RayRenderer\RayRenderer\obj\Debug\RayRenderer.csprojAssemblyReference.cache
+C:\Users\casper\source\repos\RayRenderer\RayRenderer\obj\Debug\RayRenderer.Form1.resources
+C:\Users\casper\source\repos\RayRenderer\RayRenderer\obj\Debug\RayRenderer.Properties.Resources.resources
+C:\Users\casper\source\repos\RayRenderer\RayRenderer\obj\Debug\RayRenderer.csproj.GenerateResource.cache
+C:\Users\casper\source\repos\RayRenderer\RayRenderer\obj\Debug\RayRenderer.csproj.CoreCompileInputs.cache
+C:\Users\casper\source\repos\RayRenderer\RayRenderer\obj\Debug\RayRenderer.exe
+C:\Users\casper\source\repos\RayRenderer\RayRenderer\obj\Debug\RayRenderer.pdb
