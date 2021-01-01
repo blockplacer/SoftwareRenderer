@@ -22,27 +22,29 @@ namespace RayRenderer
        
         
         float x_ = 0.0f; 
-        public float dist(Vector3 a, Vector3 b)
-        {
-            return (float)Math.Sqrt((a.X - b.X) * (a.X - b.X) + (a.Y - b.Y) * (a.Y - b.Y) + (a.Z - b.Z) * (a.Z - b.Z));
-        }
+  
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-           float vec = dist(RY.position, RY.Vector3(0.0f, 0.0f, 30.0f));
-            float vec_ = dist(RY.position, RY.Vector3(0.0f, 0.0f, 60.0f));
+           float vec = RY.dist(RY.position, RY.Vector3(0.0f, 0.0f, 30.0f));
+            float vec_ = RY.dist(RY.position, RY.Vector3(0.0f, 0.0f, 60.0f)); //grdient object
             
-            if (vec_ < 130)
-            {
-                for (int xj = 0; xj <20f; xj++)
-                {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(xj,0,1,1)), new Rectangle(new Point(pictureBox1.Width / 2 + (int)x_ + 80, pictureBox1.Height / 2 + (int)RY.position.Y + xj), new Size((int)vec, (int)vec)));
-                }
-               
-            }
+          
             if (vec<130)
              e.Graphics.FillRectangle(new SolidBrush(Color.Cyan), new Rectangle(new Point(pictureBox1.Width / 2+(int)x_, pictureBox1.Height / 2+(int)RY.position.Y ), new Size((int)vec_, (int)vec_)));
-            
-            RY.Side(RY.Vector3(-300.0f, 0.0f, 0.1f),e.Graphics);
+
+            if (vec_ < 130)
+            {
+                /* for (int xj = 0; xj <20f; xj++)
+                 {
+                     e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(xj,0,1,1)), new Rectangle(new Point(pictureBox1.Width / 2 + (int)x_ + 80, pictureBox1.Height / 2 + (int)RY.position.Y + xj), new Size((int)vec, (int)vec)));
+                 }
+                 */
+                RY.shapes.rectngularpyrism(RY.Vector3(-pictureBox1.Width / 2 +(int)x_, pictureBox1.Height/2, -30.0f),new Size((int)vec,(int)vec), e.Graphics);//
+
+
+                //  e.Graphics.FillRectangle(new SolidBrush(Color.Purple), new Rectangle(new Point(pictureBox1.Width / 2+(int)x_+80, pictureBox1.Height / 2+(int) RY.position.Y), new Size((int)vec, (int)vec)));
+            }
+            //RY.Side(RY.Vector3(-300.0f, 0.0f, 0.1f),e.Graphics);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
