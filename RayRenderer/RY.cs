@@ -38,14 +38,17 @@ namespace RayRenderer
             {
 
 
+                PointF[] points = {    new PointF(position.X-size.Width, 1f-position.Y-size.Height),
+new PointF(position.X-size.Width, size.Height), new PointF(27f+size.Width, size.Height), new PointF(26f+size.Width, 2f-position.Y-size.Height)};
 
                 graphics.TranslateTransform(vector3.X, vector3.Y);
-            Point[] points = {new Point(300-size.Width, 41-size.Height),
-    new Point(300-size.Width, 1-size.Height),///(int)position.Z
-    new Point(315+size.Width, 1+size.Height),
-            new Point(315+size.Width, 41)};//[]
-            graphics.FillPolygon(new SolidBrush(Color.BlueViolet), points);
-            graphics.TranslateTransform(0, 0);
+
+
+                graphics.FillPolygon(new SolidBrush(Color.BlueViolet), points);
+                //  graphics.FillRectangle(new SolidBrush(Color.BlueViolet), new Rectangle(new Point((int)-vector3.X,(int)vector3.Y),size));//new Size()
+                //  graphics.FillRectangle(new SolidBrush(Color.BlueViolet), new Rectangle(new Point((int)vector3.X, (int)vector3.Y), size));
+                //  graphics.FillRectangle(new SolidBrush(Color.BlueViolet), new Rectangle(new Point(20+(int)vector3.X, (int)vector3.Y), size));
+                graphics.TranslateTransform(0, 0);
 
             }
         }
