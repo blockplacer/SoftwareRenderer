@@ -19,33 +19,44 @@ namespace RayRenderer
         }
         // public float dist(Vector3 vector3)
         //{ return (float)Math.Sqrt(((double)vector3.X*vector3.X) +((double) vector3.Y*vector3.Y)+Math.Sqrt((double)vector3.Z*vector3.Z)); }
-       
+
+
+
         
-        
-  
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-           float vec = RY.dist(RY.position, RY.Vector3(0.0f, 0.0f, 20.0f));
-            float vec_ = RY.dist(RY.position, RY.Vector3(0.0f, 0.0f, 30.0f)); //grdient object
-            RY.initGraphics(e.Graphics);
-            if (vec < 130)
-            {
-                /* for (int xj = 0; xj <20f; xj++)
-                 {
-                     e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(xj,0,1,1)), new Rectangle(new Point(pictureBox1.Width / 2 + (int)x_ + 80, pictureBox1.Height / 2 + (int)RY.position.Y + xj), new Size((int)vec, (int)vec)));
-                 }
-                 */
-                RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_, pictureBox1.Height / 2, -30.0f), new Size((int)vec, (int)vec + 10), Color.BlueViolet);//
+           //float vec = RY.dist(RY.position, RY.Vector3(0.0f, 0.0f, 20.0f));
+            //float vec_ = RY.dist(RY.position, RY.Vector3(0.0f, 0.0f, 30.0f)); //grdient object
+            RY.initGraphics(e.Graphics,pictureBox1.Size);//
+                                        //if (vec < 130)
+                                        //{
+            /* for (int xj = 0; xj <20f; xj++)
+             {
+                 e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(xj,0,1,1)), new Rectangle(new Point(pictureBox1.Width / 2 + (int)x_ + 80, pictureBox1.Height / 2 + (int)RY.position.Y + xj), new Size((int)vec, (int)vec)));
+             }
+             */
+            RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_ - 303, pictureBox1.Height / 2, -80.0f), new Size(0, 5), Color.Purple);
+            RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_ + 303, pictureBox1.Height / 2, -80.0f), new Size(0, 5), Color.Orange);
+            RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_, pictureBox1.Height / 2, -30.0f), new Size(0, 10), Color.BlueViolet);//
+            
 
-                // RY.Side
-                //  e.Graphics.FillRectangle(new SolidBrush(Color.Purple), new Rectangle(new Point(pictureBox1.Width / 2+(int)x_+80, pictureBox1.Height / 2+(int) RY.position.Y), new Size((int)vec, (int)vec)));
-            }
+            // RY.Side
+            //  e.Graphics.FillRectangle(new SolidBrush(Color.Purple), new Rectangle(new Point(pictureBox1.Width / 2+(int)x_+80, pictureBox1.Height / 2+(int) RY.position.Y), new Size((int)vec, (int)vec)));
+            // }
 
 
-            if (vec_ < 130)//
-                RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_+30, pictureBox1.Height / 2, -20.0f), new Size((int)vec_, (int)vec_+10 ), Color.Orange);//+ 10
+            // if (perspective  30)
+            //  {
+
+            //perspective -= 0.1f;
+            // }
+            //perspective = ;
+            // Console.WriteLine(perspective); 
+            //  if (vec_ < 130)//
+            //   RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_+30+ RY.perspectiveEffect(), pictureBox1.Height / 2, -20.0f), new Size((int)vec_, (int)vec_+10 ), Color.Orange);//+ 10
+            //// RY.Side(RY.Vector3(pictureBox1.Width/2+(int)RY.x_,pictureBox1.Height/2 , -30.0f), new Size((int)vec_, (int)vec_ + 10), Color.Purple);
             // e.Graphics.FillRectangle(new SolidBrush(Color.Cyan), new Rectangle(new Point(pictureBox1.Width / 2+(int)x_, pictureBox1.Height / 2+(int)RY.position.Y ), new Size((int)vec_, (int)vec_)));
-           
+
 
             //RY.Side(RY.Vector3(-300.0f, 0.0f, 0.1f),e.Graphics);//
         }
