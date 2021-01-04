@@ -93,7 +93,7 @@ new PointF(position.X-size.Width, size.Height), new PointF(27f+size.Width, size.
                // float vec = dist(position, vector3);//new RayRenderer.Vector3(0.0f,0.0f,-30.0f)
                 //Side(RY.Vector3((int)vector3.X/2, (int)vector3.Y/2, (int)vector3.Z), new Size((int)vec, (int)vec / 8), Color.Purple);//graphics
                 
-                graphics.TranslateTransform(vector3.X + perspectiveEffect(vector3.X), vector3.Y);
+                graphics.TranslateTransform(vector3.X + perspectiveEffect(vector3.X)*vec, vector3.Y);
 
                 if (vec < -vector3.Z + 180+vec/3)
                     graphics.FillPolygon(new SolidBrush(color), points);
