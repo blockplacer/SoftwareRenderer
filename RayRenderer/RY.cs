@@ -83,19 +83,20 @@ new PointF(1f,90f), new PointF(27f,90f+(int)RY.position.Z), new PointF(26f,2f-(i
             {
 
                 float vec = dist(position, Vector3(0.0F, 0.0F, vector3.Z));
-               
-               
-      
-                Size size = new Size(rectsize.Width + (int)vec, rectsize.Height + (int)vec);//
+
+
+                vector3.X = vector3.X / RY.position.Z ;
+                Size size = new Size(rectsize.Width + (int)vec*(int)3.5f, rectsize.Height + (int)vec*(int)3.5f);//
+
                 PointF[] points = {    new PointF(position.X-size.Width, 1f-position.Y-size.Height),
 new PointF(position.X-size.Width, size.Height), new PointF(27f+size.Width, size.Height), new PointF(26f+size.Width, 2f-position.Y-size.Height)};
 
                // float vec = dist(position, vector3);//new RayRenderer.Vector3(0.0f,0.0f,-30.0f)
                 //Side(RY.Vector3((int)vector3.X/2, (int)vector3.Y/2, (int)vector3.Z), new Size((int)vec, (int)vec / 8), Color.Purple);//graphics
                 
-                graphics.TranslateTransform(vector3.X + perspectiveEffect(vector3.X)*vec, vector3.Y);
+                graphics.TranslateTransform(vector3.X  + perspectiveEffect(vector3.X)* vec , vector3.Y);///33
 
-                if (vec < -vector3.Z + 180+vec/3)
+                if (vec < -vector3.Z + 180)//+vec
                     graphics.FillPolygon(new SolidBrush(color), points);
 
                 //  graphics.FillRectangle(new SolidBrush(Color.BlueViolet), new Rectangle(new Point((int)-vector3.X,(int)vector3.Y),size));//new Size()

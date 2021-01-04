@@ -28,14 +28,14 @@ namespace RayRenderer
            //float vec = RY.dist(RY.position, RY.Vector3(0.0f, 0.0f, 20.0f));
             //float vec_ = RY.dist(RY.position, RY.Vector3(0.0f, 0.0f, 30.0f)); //grdient object
             RY.initGraphics(e.Graphics,pictureBox1.Size);//
-                                        //if (vec < 130)
-                                        //{
+                                                         //if (vec < 130)
+                                                         //{
             /* for (int xj = 0; xj <20f; xj++)
              {
                  e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(xj,0,1,1)), new Rectangle(new Point(pictureBox1.Width / 2 + (int)x_ + 80, pictureBox1.Height / 2 + (int)RY.position.Y + xj), new Size((int)vec, (int)vec)));
              }
-             */
-            RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_ - 303, pictureBox1.Height / 2, -80.0f), new Size(0, 5), Color.Purple);
+             *///// RY.position.Z * 15
+            RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_ - 303 , pictureBox1.Height / 2, -80.0f), new Size(0, 5), Color.Purple);
             RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_ + 303, pictureBox1.Height / 2, -80.0f), new Size(0, 5), Color.Orange);
             RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_, pictureBox1.Height / 2, -30.0f), new Size(0, 10), Color.BlueViolet);//
             
