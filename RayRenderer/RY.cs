@@ -12,7 +12,7 @@ namespace RayRenderer
      }*/
     public static class RY
     {
-        public static Vector3 position = RY.Vector3(0.0f, 0.0f, -30.0f);
+        public static Vector3 position = RY.Vector3(0.0f, 0.0f,110.0F);// -3
         public static float x_ = 0.0f;
 
         public static float dist(Vector3 a, Vector3 b)
@@ -30,24 +30,48 @@ namespace RayRenderer
             graphics = graphic;
             screenSize = size;
         }
-        public static float perspectiveEffect(float x )
+        public static float perspectiveEffect(float x ,float y,bool mode)
         {
-            float check = RY.x_ * 0.8f ;
-            float perspective = -80.0f - x;
+            float check = y * 0.8f ;
+            if(mode == false)
+            {
+                float perspective = -80.0f - x;
             
             
-            if (check >-80.0f - x)
+            if (check >-30.0f - x)
             {
                 perspective = check;
 
             }else
             {
-                perspective = -80.0f-x;
+                perspective = -30.0f-x;
             }
             // if()
             //Console.WriteLine(perspective);
+
             return perspective;
-        
+            }
+            if(mode == true)
+            {
+                float perspective = 80.0f - x;
+
+
+                if (check > 30.0f - x)
+                {
+                    perspective = check;
+
+                }
+                else
+                {
+                    perspective = -30.0f - x;
+                }
+                // if()
+                //Console.WriteLine(perspective);
+
+                return -perspective;
+
+            }
+            return 1.0f;
         }
         public static void Side(Vector3 vector3,Size size,Color color)
         {
@@ -79,24 +103,40 @@ new PointF(1f,90f), new PointF(27f,90f+(int)RY.position.Z), new PointF(26f,2f-(i
         public static class shapes
         {
 
-            public static void rectngularpyrism(Vector3 vector3, Size rectsize,Color color)//,
+            public static void rectngularpyrism(Vector3 vector3,Size size,Color objectcol,bool mode) {
+                for (int xj = 0; xj < 33; xj++)
+                {
+                    graphics.TranslateTransform(x_, position.Y);
+                    Color col = Color.FromArgb(objectcol.A, objectcol.R, objectcol.G-(int)xj, objectcol.B-(int)xj);
+                    if(mode == false)
+                        rect(Vector3(vector3.X  + screenSize.Width / 2 , vector3.Y+screenSize.Height / 2, vector3.Z+xj), size, col,mode);
+                    if(mode == true)
+                        rect(Vector3(vector3.X + screenSize.Width / 2 , vector3.Y + screenSize.Height / 2, vector3.Z + xj), size, col, mode);
+                    graphics.ResetTransform();
+                }
+            }
+            public static void rect(Vector3 vector3, Size rectsize, Color color, bool mode)//,
             {
 
-                float vec = dist(position, Vector3(0.0F, 0.0F, vector3.Z));
-               
-               
-      
-                Size size = new Size(rectsize.Width + (int)vec*(int)3.5f, rectsize.Height + (int)vec*(int)3.5f);//
+                float vec = dist(position, Vector3(0.0F, 0.0F, vector3.Z));// 
+                float vec_ = dist(position, Vector3(0.0F, vector3.Y, vector3.Z));
+                //
+
+                Size size = new Size(rectsize.Width + (int)vec/(int)vec+1, rectsize.Height + (int)vec*(int)3.5f);//
 
                 PointF[] points = {    new PointF(position.X-size.Width, 1f-position.Y-size.Height),
 new PointF(position.X-size.Width, size.Height), new PointF(27f+size.Width, size.Height), new PointF(26f+size.Width, 2f-position.Y-size.Height)};
 
                // float vec = dist(position, vector3);//new RayRenderer.Vector3(0.0f,0.0f,-30.0f)
                 //Side(RY.Vector3((int)vector3.X/2, (int)vector3.Y/2, (int)vector3.Z), new Size((int)vec, (int)vec / 8), Color.Purple);//graphics
-                
-                graphics.TranslateTransform(vector3.X  + perspectiveEffect(vector3.X)* vec , vector3.Y);///33
+                if(mode == true)
+                    graphics.TranslateTransform(x_*30+vector3.X + perspectiveEffect(vector3.X, -x_, mode)  * -vec/10 * 3, vector3.Y - perspectiveEffect(vector3.Y, position.Y, mode) * vec);
+                if (mode == false)
+                graphics.TranslateTransform(vector3.X + perspectiveEffect(vector3.X, RY.x_, mode) * vec/10 * 3, vector3.Y+perspectiveEffect(vector3.Y,position.Y,mode)*vec);/////33
+                //  
 
                 if (vec < -vector3.Z + 180)//+vec
+                    //////
                     graphics.FillPolygon(new SolidBrush(color), points);
 
                 //  graphics.FillRectangle(new SolidBrush(Color.BlueViolet), new Rectangle(new Point((int)-vector3.X,(int)vector3.Y),size));//new Size()

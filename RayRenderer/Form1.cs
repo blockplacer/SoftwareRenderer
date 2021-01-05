@@ -28,8 +28,9 @@ namespace RayRenderer
            //float vec = RY.dist(RY.position, RY.Vector3(0.0f, 0.0f, 20.0f));
             //float vec_ = RY.dist(RY.position, RY.Vector3(0.0f, 0.0f, 30.0f)); //grdient object
             RY.initGraphics(e.Graphics,pictureBox1.Size);//
-                                                         //if (vec < 130)
-                                                         //{
+
+            //if (vec < 130)
+            //{
             /* for (int xj = 0; xj <20f; xj++)
              {
                  e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(xj,0,1,1)), new Rectangle(new Point(pictureBox1.Width / 2 + (int)x_ + 80, pictureBox1.Height / 2 + (int)RY.position.Y + xj), new Size((int)vec, (int)vec)));
@@ -39,11 +40,26 @@ namespace RayRenderer
             // RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_ - 303 / RY.position.Z * 15, pictureBox1.Height / 2, -80.0f), new Size(0, 5), Color.Purple);
             // RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_ + 303 / RY.position.Z * 15, pictureBox1.Height / 2, -80.0f), new Size(0, 5), Color.Orange);
             //// RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_, pictureBox1.Height / 2, -30.0f), new Size(0, 10), Color.BlueViolet);//
-            for (int xj = 0; xj < 33; xj++)
-            {
-                RY.shapes.rectngularpyrism(RY.Vector3(pictureBox1.Width / 2 + (int)RY.x_ , pictureBox1.Height / 2, xj), new Size(0, 5), Color.FromArgb(255,0, 255-xj,255-xj));///// RY.position.Z * 15
-            }
 
+            //pictureBox1.Width / 2 + (int),RY.x_pictureBox1.Height / 2,30
+
+            // RY.shapes.rectngularpyrism(RY.Vector3(150, 0, 130), new Size(0, 5), Color.FromArgb(255, 0, 255, 100),true);
+            //RY.shapes.rectngularpyrism(RY.Vector3(100 , 0 , 130 ),new Size(0, 5), Color.FromArgb(255,0, 255, 255 ),true);////// RY.position.Z * 15
+
+
+
+            //   RY.shapes.rectngularpyrism(RY.Vector3(300, 0, 80), new Size(0, 5), Color.FromArgb(255, 0, 255, 100), true);
+            
+            RY.shapes.rectngularpyrism(RY.Vector3(0, 0, 80), new Size(0, 5), Color.FromArgb(255, 0, 255, 255), false);
+            //    RY.shapes.rectngularpyrism(RY.Vector3(300, 0, 100), new Size(0, 5), Color.FromArgb(255, 0, 255, 100), true);
+            
+            RY.shapes.rectngularpyrism(RY.Vector3(0, 0, 100), new Size(0, 5), Color.FromArgb(255, 0, 255, 255), false);
+            RY.shapes.rectngularpyrism(RY.Vector3(0, -100, 100), new Size(0, 5), Color.FromArgb(255, 0, 255, 255), false);
+            /*RY.shapes.rectngularpyrism(RY.Vector3(300, 0, 50), new Size(0, 5), Color.FromArgb(255, 0, 100, 255), true);
+            RY.shapes.rectngularpyrism(RY.Vector3(0, 0, 50), new Size(0, 5), Color.FromArgb(255, 255, 255, 255), false);
+            RY.shapes.rectngularpyrism(RY.Vector3(0, 0, 70), new Size(10, 10), Color.FromArgb(255, 255, 255, 255), false);
+            RY.shapes.rectngularpyrism(RY.Vector3(0, 50, 1), new Size(10, 10), Color.FromArgb(255, 255, 100, 255), false);*/
+            Console.WriteLine(RY.position.Z);
             // RY.Side
             //  e.Graphics.FillRectangle(new SolidBrush(Color.Purple), new Rectangle(new Point(pictureBox1.Width / 2+(int)x_+80, pictureBox1.Height / 2+(int) RY.position.Y), new Size((int)vec, (int)vec)));
             // }
@@ -73,13 +89,17 @@ namespace RayRenderer
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.W)
-                RY.position.Z --;
+                RY.position.Z--;
+
             if (e.KeyCode == Keys.S)
-                RY.position.Z ++;
+                    RY.position.Z++;
+            
             if (e.KeyCode == Keys.D)
                 RY.x_-=3;
             if (e.KeyCode == Keys.A)
                 RY.x_+=3;
+            if (e.KeyCode == Keys.E)
+                RY.position.Y++;
         }
 
         private void Form1_Resize(object sender, EventArgs e)
