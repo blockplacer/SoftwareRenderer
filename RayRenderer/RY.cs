@@ -120,7 +120,7 @@ new PointF(1f,90f), new PointF(27f,90f+(int)RY.position.Z), new PointF(26f,2f-(i
 
                 float vec = dist(position, Vector3(0.0F, 0.0F, vector3.Z));// 
                 
-                //
+                
 
                 Size size = new Size(rectsize.Width + (int)vec/(int)vec+1, rectsize.Height + (int)vec*(int)3.5f);//
 

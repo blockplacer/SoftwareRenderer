@@ -50,16 +50,16 @@ namespace RayRenderer
 
             //   RY.shapes.rectngularpyrism(RY.Vector3(300, 0, 80), new Size(0, 5), Color.FromArgb(255, 0, 255, 100), true);
             
-            RY.shapes.rectngularpyrism(RY.Vector3(0, 0, 80), new Size(0, 5), Color.FromArgb(255, 0, 255, 255), false);
+           // RY.shapes.rectngularpyrism(RY.Vector3(0, 0, 80), new Size(0, 5), Color.FromArgb(255, 0, 255, 255), false);
             //    RY.shapes.rectngularpyrism(RY.Vector3(300, 0, 100), new Size(0, 5), Color.FromArgb(255, 0, 255, 100), true);
             
-            RY.shapes.rectngularpyrism(RY.Vector3(0, 0, 100), new Size(0, 5), Color.FromArgb(255, 0, 255, 255), false);
+           // RY.shapes.rectngularpyrism(RY.Vector3(0, 0, 100), new Size(0, 5), Color.FromArgb(255, 0, 255, 255), false);
             RY.shapes.rectngularpyrism(RY.Vector3(0, -100, 100), new Size(0, 5), Color.FromArgb(255, 0, 255, 255), false);
             /*RY.shapes.rectngularpyrism(RY.Vector3(300, 0, 50), new Size(0, 5), Color.FromArgb(255, 0, 100, 255), true);
             RY.shapes.rectngularpyrism(RY.Vector3(0, 0, 50), new Size(0, 5), Color.FromArgb(255, 255, 255, 255), false);
             RY.shapes.rectngularpyrism(RY.Vector3(0, 0, 70), new Size(10, 10), Color.FromArgb(255, 255, 255, 255), false);
             RY.shapes.rectngularpyrism(RY.Vector3(0, 50, 1), new Size(10, 10), Color.FromArgb(255, 255, 100, 255), false);*/
-            Console.WriteLine(RY.position.Z);
+           // Console.WriteLine(RY.position.Z);
             // RY.Side
             //  e.Graphics.FillRectangle(new SolidBrush(Color.Purple), new Rectangle(new Point(pictureBox1.Width / 2+(int)x_+80, pictureBox1.Height / 2+(int) RY.position.Y), new Size((int)vec, (int)vec)));
             // }
