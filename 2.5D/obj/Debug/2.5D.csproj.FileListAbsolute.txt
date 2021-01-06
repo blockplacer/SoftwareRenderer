@@ -1,0 +1,10 @@
+C:\Users\casper\source\repos\2.5D\2.5D\bin\Debug\2.5D.exe.config
+C:\Users\casper\source\repos\2.5D\2.5D\bin\Debug\2.5D.exe
+C:\Users\casper\source\repos\2.5D\2.5D\bin\Debug\2.5D.pdb
+C:\Users\casper\source\repos\2.5D\2.5D\obj\Debug\2.5D.csprojAssemblyReference.cache
+C:\Users\casper\source\repos\2.5D\2.5D\obj\Debug\_2._5D.Form1.resources
+C:\Users\casper\source\repos\2.5D\2.5D\obj\Debug\_2._5D.Properties.Resources.resources
+C:\Users\casper\source\repos\2.5D\2.5D\obj\Debug\2.5D.csproj.GenerateResource.cache
+C:\Users\casper\source\repos\2.5D\2.5D\obj\Debug\2.5D.csproj.CoreCompileInputs.cache
+C:\Users\casper\source\repos\2.5D\2.5D\obj\Debug\2.5D.exe
+C:\Users\casper\source\repos\2.5D\2.5D\obj\Debug\2.5D.pdb
