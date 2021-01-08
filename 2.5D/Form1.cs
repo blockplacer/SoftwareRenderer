@@ -16,22 +16,28 @@ namespace _2._5D
         {
             InitializeComponent();
         }
-
+        int time;
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             graphics = e.Graphics   ;
+            time ++;
+            
+
+            for (int xj = 0; xj < 33; xj++)
+            {
+                rect(Vector3(0.0f + pictureBox1.Width / 2, 0.0f + pictureBox1.Height / 2, -380 + xj), -380, new Size(800, 80), Color.FromArgb(255, 100 + xj, 255 - xj, 255 - xj), false);
+            }
+
+        
            
             for (int xj = 0; xj < 33; xj++)
             {
-                rect(Vector3(0.0f + pictureBox1.Width / 2, 0.0f + pictureBox1.Height / 2,  xj), new Size(1, 80), Color.FromArgb(255,0,255-xj,255-xj), false);
+                rect(Vector3(333.0f + pictureBox1.Width / 2, 0.0f + pictureBox1.Height / 2, 33 + xj),33, new Size(800, 10), Color.FromArgb(255, 100 - xj, 100 + xj, 100 + xj), false);
             }
+
             for (int xj = 0; xj < 33; xj++)
             {
-                rect(Vector3(0.0f + pictureBox1.Width / 2, 0.0f + pictureBox1.Height / 2, 33+xj), new Size(1, 80), Color.FromArgb(255, 100+xj, 255 - xj, 255 - xj), false);
-            }
-            for (int xj = 0; xj < 33; xj++)
-            {
-                rect(Vector3(333.0f + pictureBox1.Width / 2, 0.0f + pictureBox1.Height / 2, 33 + xj), new Size(1, 10), Color.FromArgb(255, 100 - xj, 100 + xj, 100 + xj), false);
+                rect(Vector3(0.0f + pictureBox1.Width / 2, 0.0f + pictureBox1.Height / 2, 80 + xj), 80, new Size(800, 80), Color.FromArgb(255, 0, 255 - xj, 255 - xj), false);//;
             }
 
         }
@@ -88,25 +94,27 @@ namespace _2._5D
             }
             return 1.0f;
         }
-        public static float vec_ = (float)Math.Sqrt(position.Z * position.Z + 80 * 80); ////////  
+         ////////  
        
-        public static void rect(Vector3 vector3, Size rectsize, Color color, bool mode)//,
+        public static void rect(Vector3 vector3,float z,Size rectsize, Color color, bool mode)//,
         {
 
+             float vec_ = (float)Math.Sqrt(position.Z * position.Z + z * z);
 
+        float vec =vector3.Z+vec_+position.Z;
 
-            float vec =vector3.Z+vec_+position.Z;
-
-        graphics.TranslateTransform(vector3.X + perspectiveEffect(vector3.X, position.X, mode) * vec / 30* 3 + position.X * 10.0f, vector3.Y);
+        
             Size size = new Size(rectsize.Width +(int)vec/3 , rectsize.Height + (int)vec/3);//
 
-          
+            graphics.TranslateTransform(vector3.X + perspectiveEffect(vector3.X, position.X, mode) * vec / 30 * 3 , vector3.Y);
 
-            PointF[] points = {    new PointF(position.X-size.Width, 1f-position.Y-size.Height),
-new PointF(position.X-size.Width, size.Height), new PointF(27f+size.Width, size.Height), new PointF(26f+size.Width, 2f-position.Y-size.Height)};
-            if(vec < vector3.Z+vec_+150)//+180
+            PointF[] points = {    new PointF(position.X-size.Width+size.Width*1.1f, 1f-position.Y-size.Height),
+new PointF(position.X-size.Width+size.Width*1.1f, size.Height), new PointF(27f+size.Width-size.Width*1.1f, size.Height), new PointF(26f+size.Width-size.Width*1.1f, 2f-position.Y-size.Height)};
+            if(vec < vector3.Z+vec_+500)
+            {//+180
+                if(size.Height > 0)
                 graphics.FillPolygon(new SolidBrush(color), points);
-
+            }
             graphics.ResetTransform();
 
 
